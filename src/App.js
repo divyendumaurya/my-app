@@ -8,13 +8,13 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React, {useState} from 'react'
-// import {BrowserRouter as Router , Route , Link ,Routes } from "react-router-dom";
+// import {BrowserRouter as Router , Route ,Routes } from "react-router-dom";
 
 
 function App() {
   const [mode , setMode] = useState('light');  //for dark mode
 
-  const [greenMode , setGreenMode] = useState('light')
+  // const [greenMode , setGreenMode] = useState('light')
 
   const [alert , setAlert] = useState(null);
 
@@ -34,7 +34,7 @@ const showAlert = (message , type) =>{
 
 const toggleMode = () =>{
   if(mode === 'light'){
-    setMode ('dark');
+    setMode ("dark");
     document.body.style.backgroundColor = "#2e2656"
     showAlert("Dark mode has been enabled ","success")
   }
@@ -46,17 +46,17 @@ const toggleMode = () =>{
 }
 
 
-const toggleModeGreen=()=>{
-  if(greenMode==='light'){
-        setGreenMode('dark Green');
-        document.body.style.backgroundColor = 'darkGreen';
-        showAlert ("Dark green mode has been enabled","success");
-  }else{
-        setGreenMode('light');
-        document.body.style.backgroundColor = 'white';
-        showAlert ("Light mode has been enabled","success");
-  }
-}
+// const toggleModeGreen=()=>{
+//   if(greenMode==='light'){
+//         setGreenMode('dark Green');
+//         document.body.style.backgroundColor = 'darkGreen';
+//         showAlert ("Dark green mode has been enabled","success");
+//   }else{
+//         setGreenMode('light');
+//         document.body.style.backgroundColor = 'white';
+//         showAlert ("Light mode has been enabled","success");
+//   }
+// }
 
 
 
@@ -65,30 +65,31 @@ const toggleModeGreen=()=>{
   return (
     <>
     
-{/* <Router> */}
-<Navbar title= "TextUtils" about= "AboutTextUtils" mode={mode} toggleMode={toggleMode} greenMode={greenMode} toggleModeGreen={toggleModeGreen} />
+ {/* <Router>  */}
+<Navbar title= "TextUtils" about= "About" mode={mode} toggleMode={toggleMode} />   
 
 
 <Alert alert={alert}/>
+ {/* <About mode ={mode}/> */}
 
   
-    {/* <Routes> */}
-          {/* <Route path="/about" element={< About />}> */}
+     {/* <Routes> */}
+          {/* <Route path="/about" element={< About mode ={mode} />}> */}
             {/* <About /> */}
+           
           
-          
-          {/* </Route> */}
-          {/* <Route path="/" element= {<TextForm showAlert={showAlert} heading = "Enter Your Text Here" mode={mode} />}> */}
+           {/* </Route>  */}
+          {/* <Route path="/" element= {<TextForm showAlert={showAlert} heading = "Enter Your Text Here" mode={mode} />}>  */}
             
-          {/* </Route> */}
-        {/* </Routes> */}
+           {/* </Route> */}
+        {/*  </Routes> */}
 
        < TextForm showAlert={showAlert} heading = "Enter Your Text Here" mode={mode} />
       
-{/* </Router> */}
+{/* //  </Router>  */}
 
               
-            {/* <About/> */}
+             
 
 
     </>
@@ -97,3 +98,10 @@ const toggleModeGreen=()=>{
 }
 
 export default App;
+
+
+
+
+
+
+// greenMode={greenMode} toggleModeGreen={toggleModeGreen} .for green mode
